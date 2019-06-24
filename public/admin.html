@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>LGBT</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+</head>
+<body style="height:1500px">
+  <link href="https://fonts.googleapis.com/css?family=Dokdo" rel="stylesheet">
+  <script type="text/javascript">
+    
+  
+        window.onscroll = function() {Function()};
+
+            function Function() {
+              if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+                document.getElementById("nav-bar").hidden=false;
+              } else{
+                document.getElementById("nav-bar").hidden=true;
+              }
+            }
+
+
+  </script>
+  <style type="text/css">
+   body{
+    margin:0 auto;
+   }
+    #nav-bar{
+      list-style-type: none;
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #343a40;
+      font-size: 20px;
+      box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      display:flex;
+      justify-content: center;
+      margin-top: 5px;
+      padding: 10px 0px;
+      height:80px;
+      top: 0;
+      position: sticky;
+      width: 100%;
+      opacity: .8;
+      z-index: 999;
+
+    }
+    
+    .li{
+      padding: 10px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+
+    }
+    #a1{
+      margin-left: 30px;
+    }
+    .btn{
+      padding-top: 15px;
+      margin-top: 15px;
+      width:100px;
+      height: 55px;
+    }
+    #a4{
+      margin-left: auto;
+
+    }
+    #a5{
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    #a2:hover{
+      text-decoration:none ;  
+      color: #999999;
+    }
+    #a1:hover {
+      text-decoration:none ;  
+      color: #999999;
+    }
+    #a1,#a2{
+      color:white;
+    }
+    #a3{
+      color: white;
+      margin-right: auto;
+
+    }
+    .container{
+      padding: 16px;
+      margin-top: 30px;
+      height: 70vh;
+    }
+    @media only screen and (max-width: 600px) {
+    #nav-bar {
+        font-size: 0.8em;
+        padding: 0;
+    }
+}
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0px;
+  float: bottom;
+  margin: 30px;
+  
+  
+}
+.card{
+  margin: 20px;
+  
+}
+.carousel{
+  margin: 100px 20px;
+}
+
+
+
+
+/* Dropdown Button */
+.dropbtn {
+  background: none;
+  color: white;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.btn-primary{
+  padding: 10px 10px;
+  height:50px;
+  width:200px;
+}
+#jinu{
+      list-style-type: none;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 20px;
+      display:flex;
+      justify-content: center;
+      margin-top: 0px;
+      padding: 10px 0px;
+      
+      
+      height: 120px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {color: #999999;}
+  </style>
+
+<div id="jinu" >
+     <img src="logo.png" style="width: 100px; height:100px;">
+    <a href="/profile"class="btn btn-outline-dark"id="a4">Profile</a>
+    <a href="/logout"class="btn btn-outline-dark"id="a5">Log out</a> 
+</div>
+<!--nav bar-->
+<div id="nav-bar" hidden>
+      <a href="/" class="li"id="a1" >Home</a>
+      <a href="about.html"class="li"id="a2">About</a>
+      <li class="li"id="a3">
+        <div class="dropdown">
+        <button class="dropbtn">Parents</button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      </li>
+      
+</div>
+
+<div class="jumbotron" id="jumb"style="height:600px; ; background: url('lgbt-fact.jpg');background-size: cover;"><br><br><br>
+  <h1 class="display-4" style="font-family: 'Quicksand', sans-serif;">Let's get one thing straight...</h1>
+  <p class="lead"><h1 style="font-size:50px;font-family: 'Quicksand', sans-serif; margin-left: 600px;">I'm NOT.</h1></p>
+  <hr class="my-4">
+  <p style="width:300px;font-size: 18px;">It’s funny how we know gay people exist and we don’t have proof of God but we deny gay people basic human rights because it might piss off God..</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="https://www.hrw.org/topic/lgbt-rights" role="button"  style="padding-top:10px; width: 200px ">Learn more</a>
+  </p>
+</div>
+
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="/post-images"> 
+        <iframe class="d-block w-100" alt="First slide" width="1004" height="565" src="https://www.youtube.com/embed/P4hNG60NHM8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+      class="d-block w-100"  alt="Second slide"></iframe></a>
+    </div>
+    <div class="carousel-item">
+         <a href="/post-images"><img class="d-block w-100" src="lgbt1.jpg" alt="Second slide" height="700"></a>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="lgbt2.jpg" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="lgbt3.jpg" alt="Fourth slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<!--text-->
+<div class="container">
+<p>LGBT stands for lesbian, gay, bisexual and transgender and along with heterosexual they are terms used to describe people’s sexual orientation or gender identity. These terms are explained in more detail here.  </p>
+<h3>Lesbian</h3>
+<p>A lesbian woman is one who is romantically, sexually and/or emotionally attracted to women. Many lesbians prefer to be called lesbian rather than gay.
+</p>
+<h3>Gay</h3>
+<p>A gay man is one who is romantically, sexually and/or emotionally attracted to men. The word gay can be used to refer generally to lesbian, gay and bisexual people but many women prefer to be called lesbian. Most gay people don’t like to be referred to as homosexual because of the negative historical associations with the word and because the word gay better reflects their identity.
+</p>
+<h3>Bisexual</h3>
+<p>A bisexual person is someone who is romantically, sexually and/or emotionally attracted to people of genders both the same and different to their own.
+</p>
+<h3>Transgender or Trans</h3>
+<p>Transgender an umbrella term used to describe people whose gender identity (internal feeling of being male, female or non-binary) and/or gender expression, differs from the gender they were assigned at birth. Not everyone whose appearance or behaviour is gender-atypical will identify as a transgender person.
+</p>
+<h3>Gender Identity</h3>
+<p>One’s gender identity refers to whether one feels male, female or non-binary (regardless of one’s biological sex). Gender expression refers to outwardly expressing one’s gender identity.
+</p>
+<p>Transgender people typically live or wish to live full time as members of a gender other than that assigned at birth. Transgender people often choose to undergo a social transition, which may involve changing their name, pronouns, appearance, and official gender markers. They may also pursue a medical transition, which can involve medical interventions, such as hormone therapy or surgery, to make their bodies fit with their gender identity and help ease gender dysphoria.
+</p>
+<p>Transvestite or cross-dressing individuals are thought to comprise the largest transgender sub-group. Cross-dressers sometimes wear clothes considered appropriate to a different gender. They vary in how completely they dress (from one article of clothing to fully cross-dressing) as well as in their motives for doing so.
+</p>
+<h3>Gender Reassignment</h3>
+<p>Gender Reassignment also called transitioning, is the process of changing the way someone’s gender is lived publicly and can be a complex process. People who wish to transition often start by expressing their gender identity in situations where they feel safe. They typically work up to living full-time in a different gender, by making gradual changes to their gender expression.
+</p>
+<p>Connecting with other transgender people through peer support groups and transgender community organisations is also very helpful for people when they are going through the transition process. Transitioning differs for each individual and may involve changes in clothing and grooming, a name change, change of gender on identity documents, hormonal treatment, and surgery.
+</p>
+<h3>Coming Out</h3>
+<p>Coming Out is the term used by lesbian, gay, bisexual and transgender people and the wider queer community to describe their experience of discovery, self-acceptance, openness and honesty about their LGBT identity and their decision to disclose, i.e. to share this with others when and how they choose.
+</p>
+<h3>Sexual Orientation</h3>
+<p>Sexual Orientation refers to an enduring pattern of emotional, romantic, and/or sexual attractions to men, women, or multiple genders. Sexual orientation also refers to a person’s sense of identity based on those attractions, related behaviours, and membership in a community of others who share those attractions.
+</p>
+<h3>Homophobia</h3>
+<p>Homophobia refers to fear of or prejudice and discrimination against lesbian, gay and bisexual people. It is also the dislike of same-sex attraction and love or the hatred of people who have those feelings. The term was first used in the 1970s and is more associated with ignorance, prejudice and stereotyping than with the physiological reactions usually attributed to a ‘phobia’. While homophobic comments or attitudes are often unintentional, they can cause hurt and offence to lesbian, gay and bisexual people.
+</p>
+<h3>Transphobia</h3>
+<p>Transphobia refers to fear of or prejudice and discrimination against people who are transgender or who are perceived to transgress norms of gender, gender identity or gender expression. While transphobic comments or attitudes are often unintentional, they can cause hurt and offence to transgender people.
+</p>
+<h3>Biphobia</h3>
+<p>Biphobia refers to the intolerance, hatred or erasure of bisexual people. The term describes an aversion to bisexuality (or any non-monosexuality) and is fueled by negative attitudes and myths surrounding bisexuality.
+</p>
+<p style="font-size: 12px;">Definitions adapted from More Than a Phase (Pobal, 2006), For a Better Understanding of Sexual Orientation (APA, 2008) and Answers to Your Questions About Transgender Individuals and Gender Identity (APA, 2006)</p>
+
+<!--card-->
+<div class="cards">
+  <div class="card" style="width: 18rem;">
+  <img src="stories.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Stories</h5>
+    <p class="card-text">For Knowing more about their lifes and how they came out.</p>
+    <a href="story.html" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+  <div class="card" style="width: 18rem;">
+  <img src="poems.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Poems</h5>
+    <p class="card-text">Only beautiful lines can make you feel the real pain.</p>
+    <a href="poem.html" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+  <div class="card" style="width: 18rem;">
+  <img src="articles.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Articles</h5>
+    <p class="card-text">Great articles by some writers,help you find a way.</p>
+    <a href="article.html" class="btn btn-primary">Read More</a>
+  </div>
+</div>
+</div>
+
+</body>
+</html>

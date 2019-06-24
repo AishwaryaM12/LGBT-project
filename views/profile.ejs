@@ -1,0 +1,101 @@
+
+<html>
+<head>
+<title></title>
+<!-- <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../node_modules/jquery/dist/jquery.slim.js"></script>
+<script type="text/javascript" src="../node_modules/jquery/dist/jquery.slim.min.js"></script> -->
+</head>
+<body><!-- Add icon library -->
+<style type="text/css">
+	
+	.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+
+<div class="card">
+ 
+<br><img id="myImg" src="profile.png" alt="your image" height=300 width=250><br><br>
+  <!-- <input type="file" name="pic" accept="image/*"> -->
+  <h1 name="firstname"><%=firstname%></h1>
+  <h1 name="Lastname"><%=lastname%></h1>
+  <h3 name="email"><%=email%></h3>
+  <h5 name="gender"><%=gender%></h5>
+  <h4>BIO:</h4>
+  <p class="bio"></p>
+  <p><button id="btn">Give Like</button></p>
+  <h8 >Total Likes:<p id ="like"></p></h8>
+</div>
+
+<script type="text/javascript"> 
+  var btn=document.getElementById("btn");
+  var a=0;
+ // /* The uploader form */
+ //    $(function () {
+ //        $(":file").change(function () {
+ //            if (this.files && this.files[0]) {
+ //                var reader = new FileReader();
+
+ //                reader.onload = imageIsLoaded;
+ //                reader.readAsDataURL(this.files[0]);
+ //            }
+ //        });
+ //    });
+
+ //    function imageIsLoaded(e) {
+ //        $('#myImg').attr('src', e.target.result);
+ //        $('#yourImage').attr('src', e.target.result);
+ //    };
+    btn.addEventListener("click", liked);
+    function liked(){
+        
+        if(a===1){
+          a=a-1;
+          like.innerHTML=a;
+          btn.innerHTML="Give Like";
+        }
+        else if(a===0){
+          a=a+1;
+          like.innerHTML=a;
+          btn.innerHTML="You Liked";
+        
+        }
+               
+     }
+
+      </script>
+</body>
+</html>

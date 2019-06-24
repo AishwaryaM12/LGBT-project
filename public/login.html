@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Dokdo|Merriweather" rel="stylesheet">
+</head>
+<body>
+	<style type="text/css">
+		.form{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		    text-align: center;
+		    background: url("images.jpg");
+		    background-size: contain;
+		    position: relative;
+			margin: 5% auto;
+			margin-top: 150px;
+		    border-radius: 2px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+			position: relative;
+		    box-sizing: border-box;
+			padding: 50px;
+			width: 400px;
+			height: 400px;
+			color:white;
+
+
+		}
+		.textform{
+			display: flex-inline;
+			flex-wrap: wrap;
+			justify-content: center;
+			
+		}
+		.input{
+			  	  			
+			  width: 250px;
+			  height: 28px;
+			  border: none;
+			  color: #FFF;
+			  border-bottom: 2px solid #FFF;
+			  font-family: 'Roboto', sans-serif;
+			  font-weight: 400;
+			  font-size: 15px;
+			  transition: 0.2s ease;	
+			  background: none; 
+		}
+		.input:focus{
+				  background: none;
+				  border-bottom: 3px solid #16a085;
+				  color: #FFF;
+				  transition: 0.2s ease;
+
+				}
+		
+		body{
+			background: url("download.jpg");
+			background-size: cover;
+		}
+		#log{ color: white;
+			font-size: 30px;
+           text-decoration: none;
+           font-family: 'Merriweather', serif;
+       }
+
+		button{
+			width: 250px;
+			text-align: center;
+		}
+		#log:hover{
+			color: #00FF66;
+
+		}
+		#Signup{ 
+			text-decoration: none;
+			color: #00FF66; 
+
+		}
+		.btn{
+			background: #00CC66;
+			font-family: 'Merriweather', serif;
+
+		}
+		.btn:hover{
+			color: white;
+			background-color: #00FF66;
+			font-weight: bold;
+
+		}
+		
+
+	</style>
+	
+<form class="form" name="myform" method="POST" action="/signin"onsubmit="return validate()">
+	<span><a id="log"href="login.html">Login</a>
+	<div class="textform">
+	<br>
+	<input class="input email" type="" name="email"placeholder="Email" >
+	<br>
+	<br>
+	<input class="input password" type="password" name="password"placeholder="Password" >
+	<br>
+	<br>
+	<br>
+	<input type="submit" name="button" class="btn" value="Login" >
+	
+
+	<br>
+	<br>
+	<h8>Not Registered Yet?Click here for <a id="Signup" href="Signup.html">SignUP</a><h8>
+	</div></span>
+</form>
+<script type="text/javascript" src="Log.js"></script>
+</body>
+</html>
