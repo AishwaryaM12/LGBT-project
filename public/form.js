@@ -4,24 +4,23 @@ function validate() {
   var email = document.forms["myform"]["email"].value; 
   var pass = document.forms["myform"]["Password"].value;
   var pass1 = document.forms["myform"]["Password1"].value;
-  var Mn = document.forms["myform"]["mbno"].value;
-  validname(x,y);
-  ValidateEmail(email);
-  validatenumber(Mn);
-  validatepass(pass,pass1);
+  var Mn = document.forms["myform"]["mobile"].value;
+  if(validname(x,y) || ValidateEmail(email) || validatenumber(Mn) || validatepass(pass,pass1) ){
+    
+  }else return false;
 }
 function validname(x,y){
 	if (x == "" || y=="") {
     alert("Name must be filled out");
     return false;
-  }
+  }else return true;
 }
 
 function validatenumber(Mn){
 	if(Mn!==[0-9] && Mn.length<=10){
     alert("number is not correct");
     return false;
-	}
+	}else return true;
 }
 function validatepass(pass,pass1){
 	var passw=  /^[A-Za-z]\w{7,14}$/;

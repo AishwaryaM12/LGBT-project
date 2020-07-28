@@ -4,19 +4,21 @@ const bcrypt=require('bcrypt-nodejs');
 const session = require('express-session');
 const saltRounds = 10;
 var salt = bcrypt.genSaltSync(saltRounds);
+
 const knex = require('knex')({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : 'test',
-    database : 'lgbt'
+    host : 'ec2-54-228-250-82.eu-west-1.compute.amazonaws.com',
+    user : 'mzvjnaozpxwtfk',
+    password : '3757d997fd4a7655b9a9245b215a276e1b77d5ea788d4ea2f69fdba7dea51bbf',
+    database : 'd90jt7bg9i2gh7',
+    ssl: 'off'
   }
 });
 
-knex.select('*').from('users').then(data=>{
+/*knex.select('*').from('users').then(data=>{
 	console.log(data);
-});
+});*/
 
 const app =express();
 
@@ -72,11 +74,6 @@ app.get('/register',(req,res)=>{
 
 app.use(bodyParser.json());
 
-app.get('/',(req,res)=>{
-	
-	res.sendFile("Home.html",{root:__dirname+"/public"});
-});
-
 
 app.get('/signin',(req,res)=>{
 	
@@ -104,10 +101,10 @@ app.post('/signin',(req,res)=>{
      	})
      	.catch(err=>res.status(400).json('unable to getElementBy user'))
      }else{
-     res.status(400).json('wrong credentials')
+     	res.redirect("/Invalid.html");
 	}
 	})
-     .catch(err=>res.status(400).json('wrong credentials'))
+     .catch(err=>res.redirect("/Invalid.html"))
 });
 
 app.post('/register',(req,res)=>{
@@ -116,8 +113,8 @@ app.post('/register',(req,res)=>{
 	const Lastname=req.body.Lastname;
 	const password=req.body.Password;
 	const gender=req.body.gender;
-	const mobile_number=req.body.mbno;
-	
+	const mobile_number=req.body.mobile;
+
 	const hash =bcrypt.hashSync(password,salt);
 	
 	knex.transaction(trx=>{
@@ -129,7 +126,6 @@ app.post('/register',(req,res)=>{
 		.returning('email')
 		.then(loginemail=>{
 			return trx('users')
-		    .returning('*')
 			.insert({
 				email:loginemail[0],
 				firstname:Firstname,
@@ -146,7 +142,7 @@ app.post('/register',(req,res)=>{
 		.catch(trx.rollback)
 	 })
 	
-	 .catch(err=>res.status(404).json('unable to register'));
+	 .catch(err=>res.status(404).json(err));
 
   
 
@@ -175,21 +171,26 @@ app.get('/post-images',(req,res)=>{
 	knex.select('firstname').from('users').where({email:sess.email}).then(user=>{
 	
 		if(user.length){
-		res.render('comment.ejs', {firstname:user[0].firstname})
-		
+		knex.select('firstname','comment').from('comment').then(comment=>{
+
+		res.render('comment.ejs', {comment:comment})
+		})
 	    }
 	    else{
 	    res.status(400).json('not found');
 	}
 	})}
-	 else{
-	    res.status(400).json('not found');}
+	 else{knex.select('firstname','comment').from('comment').then(comment=>{
+
+		res.render('comment.ejs', {comment:comment})
+		})}
 	
 
+
 })
-app.post('/post-images',(req,res)=>{
-	console.log(req.body);
-	const comment=req.body.comment;
+app.post('/comment',(req,res)=>{
+	
+	
     sess = req.session;	
     if(sess.email){
     knex.select(
@@ -197,45 +198,24 @@ app.post('/post-images',(req,res)=>{
      )
    .from('users')
    .where('email', sess.email)
-   .then(user=>{
-         return 
+   .then(user=>{ 
          knex('comment')
 			   .insert({ 
-				   comment:comment,
-			       id:'2',
-			       firstname:'user[0].firstname',
-			       email:'user[0].email'      
+				   comment: req.body.comment,
+			       id:user[0].id,
+			       firstname:user[0].firstname,
+			       email:user[0].email      
 			    })
 			   .then(user=>{
-			   		console.log(2);
-					res.redirect("/");
+					res.redirect("/post-images");
 				})
 			  
   	})
 
 }
+else { res.redirect("/signin");}
 }
 )
-app.get('/post',(req,res)=>{
-     res.sendFile("comment2.html",{root:__dirname+"/public"})
-	
 
-})
-app.post('/image',(req,res)=>{
-	const {id}=req.body;
-	let found=false;
-	database.users.forEach(user =>{
-		found=true; 
-		user.entries++;
-		return res.json(user.entries);
-		}
-	)
-	if(!found){
-		res.status(404).json('notfound');
-	}
-})
 
-app.listen(3000, ()=>{
-
-	console.log('app is running');
-})
+app.listen(3000)

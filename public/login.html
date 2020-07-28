@@ -8,8 +8,6 @@
 <body>
 	<style type="text/css">
 		.form{
-			display: flex;
-			flex-wrap: wrap;
 			justify-content: center;
 		    text-align: center;
 		    background: url("images.jpg");
@@ -19,7 +17,6 @@
 			margin-top: 150px;
 		    border-radius: 2px;
 			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-			position: relative;
 		    box-sizing: border-box;
 			padding: 50px;
 			width: 400px;
@@ -28,12 +25,7 @@
 
 
 		}
-		.textform{
-			display: flex-inline;
-			flex-wrap: wrap;
-			justify-content: center;
-			
-		}
+		
 		.input{
 			  	  			
 			  width: 250px;
@@ -93,8 +85,8 @@
 
 	</style>
 	
-<form class="form" name="myform" method="POST" action="/signin"onsubmit="return validate()">
-	<span><a id="log"href="login.html">Login</a>
+<form class="form" name="myform" method="POST" action="/signin" onsubmit="return validate()">
+	<span><a id="log"href="/signin">Login</a>
 	<div class="textform">
 	<br>
 	<input class="input email" type="" name="email"placeholder="Email" >
@@ -109,9 +101,23 @@
 
 	<br>
 	<br>
-	<h8>Not Registered Yet?Click here for <a id="Signup" href="Signup.html">SignUP</a><h8>
+	<h8>Not Registered Yet?Click here for <a id="Signup" href="/register">SignUP</a><h8>
 	</div></span>
 </form>
+<script type="text/javascript">
+ function validate(){
+ 	var email = document.forms["myform"]["email"].value; 
+  	var pass = document.forms["myform"]["password"].value;
+ 	 if(email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) && pass!== ''){
+ 	 	
+ 	 }else {
+ 	 	alert("Invalid Credentials!!");
+ 	 	return false;
+ 	 }
+
+
+ }
+</script>
 
 </body>
 </html>
